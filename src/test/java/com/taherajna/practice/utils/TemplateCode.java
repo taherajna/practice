@@ -31,16 +31,17 @@ public class TemplateCode {
     }
   }
 
-  public static void printArray() throws IOException {
-    int[] array = new int[2];
+  public static void printArray(int[] array) throws IOException {
     for (int i = 0; i < array.length; i++) {
-      System.out.print(array[i]);
+      System.out.print(array[i] + " ");
     }
     System.out.println();
   }
 
   public static void readInput_Scanner() throws IOException {
     Scanner scanner = new Scanner(new InputStreamReader(System.in));
-    scanner.nextInt();
+    int numberOfInputs = scanner.nextInt();
+    for (int i = 0; i < numberOfInputs; i++) {
+    }
   }
 }
