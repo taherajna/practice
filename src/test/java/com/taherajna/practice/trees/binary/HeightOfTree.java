@@ -1,4 +1,4 @@
-package com.taherajna.practice.trees;
+package com.taherajna.practice.trees.binary;
 
 import static java.lang.Math.max;
 
