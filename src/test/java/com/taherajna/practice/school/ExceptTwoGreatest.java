@@ -1,4 +1,4 @@
-package com.taherajna.practice;
+package com.taherajna.practice.school;
 
 import com.taherajna.practice.sorting.BubbleSort;
 import org.junit.Assert;

@@ -1,4 +1,4 @@
-package com.taherajna.practice;
+package com.taherajna.practice.school;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.taherajna.practice;
+package com.taherajna.practice.school;
 
 import java.io.IOException;
 import java.util.Arrays;
