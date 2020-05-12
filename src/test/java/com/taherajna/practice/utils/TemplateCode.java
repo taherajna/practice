@@ -3,6 +3,7 @@ package com.taherajna.practice.utils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TemplateCode {
@@ -36,6 +37,10 @@ public class TemplateCode {
       System.out.print(array[i] + " ");
     }
     System.out.println();
+  }
+
+  public static void printArrayToString(int[] array) {
+    System.out.println(Arrays.toString(array));
   }
 
   public static void readInput_Scanner() throws IOException {

@@ -3,11 +3,17 @@ package com.taherajna.practice.sorting;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BubbleSortTest {
+public class SortTest {
 
   @Test
-  public void sort() {
+  public void bubbleSort() {
     Sorting sorting = new BubbleSort();
+    Assert.assertArrayEquals(getSortedArray(), sorting.sort(getUnsortedArray()));
+  }
+
+  @Test
+  public void mergeSort() {
+    Sorting sorting = new MergeSort();
     Assert.assertArrayEquals(getSortedArray(), sorting.sort(getUnsortedArray()));
   }
 
