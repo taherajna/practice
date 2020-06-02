@@ -122,23 +122,13 @@ public class ABCSeq {
     boolean valid;
     for (int i = index; i < string.length(); i++) {
       valid = false;
-      switch (letter) {
-        case 0:
-          if (string.charAt(i) == 'a') {
-            valid = true;
-          }
-          break;
-        case 1:
-          if (string.charAt(i) == 'b') {
-            valid = true;
-          }
-          break;
-        case 2:
-          if (string.charAt(i) == 'c') {
-            count++;
-            valid = true;
-          }
-          break;
+      if (letter == 0 && string.charAt(i) == 'a'
+              || letter == 1 && string.charAt(i) == 'b'
+              || letter == 2 && string.charAt(i) == 'c') {
+        valid = true;
+      }
+      if (letter == 2 && string.charAt(i) == 'c') {
+        count++;
       }
       if (valid) {
         count += getSubSequencesAkBkCk_noStringSplit(string, i + 1, letter);
