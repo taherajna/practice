@@ -72,14 +72,6 @@ public class ABCSeq {
   }
 
   @Test
-  public void subSequenceAkBkCk_g4g_noSplit() {
-    String inputString = "abcbbaabcbcbcbaabbccaac";
-
-    int subsequences = getSubSequencesAkBkCk_noStringSplit(inputString, 0, 0);
-    Assert.assertEquals(9087, subsequences);
-  }
-
-  @Test
   public void subSequenceAkBkCk_complex() {
     String inputString = "abcabc";
     String[] splitString = inputString.split("");
@@ -117,31 +109,42 @@ public class ABCSeq {
     return count;
   }
 
+  @Test
+  public void subSequenceAkBkCk_g4g_noSplit() {
+    String inputString = "abcbbaabcbcbcbaabbccaac";
+
+    int subsequences = getSubSequencesAkBkCk_noStringSplit(inputString, 0, 0);
+    Assert.assertEquals(9087, subsequences);
+  }
+
   private int getSubSequencesAkBkCk_noStringSplit(String string, int index, int letter) {
     int count = 0;
+    boolean valid;
     for (int i = index; i < string.length(); i++) {
+      valid = false;
       switch (letter) {
         case 0:
           if (string.charAt(i) == 'a') {
-            count += getSubSequencesAkBkCk_noStringSplit(string, i + 1, letter);
-            count += getSubSequencesAkBkCk_noStringSplit(string, i + 1, letter + 1);
+            valid = true;
           }
           break;
         case 1:
           if (string.charAt(i) == 'b') {
-            count += getSubSequencesAkBkCk_noStringSplit(string, i + 1, letter);
-            count += getSubSequencesAkBkCk_noStringSplit(string, i + 1, letter + 1);
+            valid = true;
           }
           break;
         case 2:
           if (string.charAt(i) == 'c') {
-            count += getSubSequencesAkBkCk_noStringSplit(string, i + 1, letter);
             count++;
+            valid = true;
           }
           break;
+      }
+      if (valid) {
+        count += getSubSequencesAkBkCk_noStringSplit(string, i + 1, letter);
+        count += getSubSequencesAkBkCk_noStringSplit(string, i + 1, letter + 1);
       }
     }
     return count;
   }
-
 }
