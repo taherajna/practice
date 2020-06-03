@@ -22,10 +22,10 @@ public class SemiSudoku {
   }
 
   boolean SolveSudoko(int grid[][]) {
-    return solve(grid, 0, 0);
+    return solve(grid);
   }
 
-  private boolean solve(int[][] grid, int row, int col) {
+  private boolean solve(int[][] grid) {
     boolean solvable = true;
     for (int i = 0; i < grid.length; i++) {
       for (int j = 0; j < grid[0].length; j++) {
@@ -33,12 +33,7 @@ public class SemiSudoku {
           int candidate = 1;
           do {
             grid[i][j] = candidate++;
-          } while (candidate != 10
-                  && (!isValidGrid(grid)
-                  || (!solve(
-                  grid,
-                  j == grid[0].length - 1 ? i + 1 : i,
-                  j == grid[0].length - 1 ? 0 : j + 1))));
+          } while (candidate != 10 && (!isValidGrid(grid) || (!solve(grid))));
           if (grid[i][j] != 10) {
             solvable = true;
           } else {
