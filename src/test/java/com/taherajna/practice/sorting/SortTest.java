@@ -12,6 +12,12 @@ public class SortTest {
   }
 
   @Test
+  public void bubbleSortEven() {
+    Sorting sorting = new BubbleSort();
+    Assert.assertArrayEquals(getSortedArrayEven(), sorting.sort(getUnsortedArrayEven()));
+  }
+
+  @Test
   public void mergeSort() {
     Sorting sorting = new MergeSort();
     Assert.assertArrayEquals(getSortedArray(), sorting.sort(getUnsortedArray()));
@@ -43,6 +49,34 @@ public class SortTest {
     inputArray[6] = 58;
     inputArray[7] = 81;
     inputArray[8] = 88;
+
+    return inputArray;
+  }
+
+  private int[] getUnsortedArrayEven() {
+    int[] inputArray = new int[8];
+    inputArray[0] = 16;
+    inputArray[1] = 0;
+    inputArray[2] = 81;
+    inputArray[3] = 88;
+    inputArray[4] = 26;
+    inputArray[5] = 21;
+    inputArray[6] = 58;
+    inputArray[7] = 28;
+
+    return inputArray;
+  }
+
+  private int[] getSortedArrayEven() {
+    int[] inputArray = new int[8];
+    inputArray[0] = 0;
+    inputArray[1] = 16;
+    inputArray[2] = 21;
+    inputArray[3] = 26;
+    inputArray[4] = 28;
+    inputArray[5] = 58;
+    inputArray[6] = 81;
+    inputArray[7] = 88;
 
     return inputArray;
   }
